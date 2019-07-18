@@ -1,22 +1,27 @@
 <template>
-  <div class="col" v-html="markdownToHtml"></div>
+  <div class="col" v-html="convertedMarkdown"></div>
 </template>
 
 <script>
-import marked from 'marked';
-import DOMPurify from 'dompurify';
+import MarkdownIt from 'markdown-it';
 
 export default {
   name: 'OutputPanel',
+
   props: {
     markdownContent: {
       type: String,
       required: true,
     },
   },
+
+  created() {
+    this.md = new MarkdownIt();
+  },
+
   computed: {
-    markdownToHtml() {
-      return DOMPurify.sanitize(marked(this.markdownContent, { gfm: true }));
+    convertedMarkdown() {
+      return this.md.render(this.markdownContent);
     },
   },
 };

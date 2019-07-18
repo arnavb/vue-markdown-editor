@@ -11,11 +11,13 @@ import OutputPanel from './components/OutputPanel.vue';
 
 export default {
   name: 'App',
+
   data() {
     return {
       rawMarkdown: '',
     };
   },
+
   components: {
     Editor,
     OutputPanel,
