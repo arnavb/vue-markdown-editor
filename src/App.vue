@@ -51,4 +51,15 @@ body {
   border: 1px solid black;
   overflow: auto;
 }
+
+@media (max-width: 768px) {
+  #app {
+    display: block;
+  }
+
+  .col {
+    width: 100%;
+    height: 50%;
+  }
+}
 </style>

@@ -18,4 +18,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+textarea {
+  resize: none;
+  margin: 0;
+}
+</style>
