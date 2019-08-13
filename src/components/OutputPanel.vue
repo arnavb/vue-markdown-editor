@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable-next-line vue/no-v-html -->
   <div class="col" v-html="convertedMarkdown"></div>
 </template>
 
@@ -15,14 +16,14 @@ export default {
     },
   },
 
-  created() {
-    this.md = new MarkdownIt();
-  },
-
   computed: {
     convertedMarkdown() {
       return this.md.render(this.markdownContent);
     },
+  },
+
+  created() {
+    this.md = new MarkdownIt();
   },
 };
 </script>
