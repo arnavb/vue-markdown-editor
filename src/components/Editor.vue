@@ -1,7 +1,7 @@
 <template>
   <textarea
     class="col"
-    :value="content"
+    :value="value"
     @input="$emit('input', $event.target.value)"
   ></textarea>
 </template>
@@ -9,11 +9,11 @@
 <script>
 export default {
   name: 'Editor',
-
-  data() {
-    return {
-      content: '',
-    };
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>
@@ -21,6 +21,9 @@ export default {
 <style scoped>
 textarea {
   resize: none;
-  margin: 0;
+  margin: 5px;
+  padding: 8px;
+  font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 </style>

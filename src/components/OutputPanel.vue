@@ -28,4 +28,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+  margin: 5px;
+  padding: 8px;
+}
+</style>
